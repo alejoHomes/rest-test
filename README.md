@@ -31,9 +31,6 @@ NOTE: the XML consume, response with 24 hour from the moment to the query, so, o
 
     
 ## Build
-* Default build. Run test and bootRun
-		
-		$ gradle
 
 * To build and run the testing cases.
         
