@@ -1,0 +1,11 @@
+# Untracked files
+
+bin*
+build*
+!build.gradle
+.classpath
+.project
+.gradle
+!setting.gradle
+.settings/
+*.class
