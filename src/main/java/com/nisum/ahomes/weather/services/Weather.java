@@ -33,9 +33,11 @@ public class Weather {
 
 	public String getWeather( ){
 		return gson.toJson(dataList);
-
 	}
 
+	public String deleteWeather(String date, String hour){
+		return dataList.deleteDatasList(date, hour);
+	}
 
 
 

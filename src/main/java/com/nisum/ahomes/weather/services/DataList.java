@@ -20,12 +20,26 @@ public class DataList {
 
 
 	public List<DataPeerHour> getDatasList(String date, String hour){
+
 		List<DataPeerHour> datas2 = new ArrayList<DataPeerHour>();
 
 		for(DataPeerHour data : datas)
 			if(data.getDate().equals(date) && data.getHour().equals(hour))
 				datas2.add(data);
 		return datas2;
+
 	}
 
+	public String deleteDatasList(String date, String hour){
+
+		int index = 0;
+		int removeIndex = 0;
+		for(DataPeerHour data : datas){
+			if(data.getDate().equals(date) && data.getHour().equals(hour))
+				removeIndex = index;
+			index++;
+		}
+		datas.remove(removeIndex);
+		return "{\"text\":\"deleted data " + removeIndex+"\" }";
+	}
 }

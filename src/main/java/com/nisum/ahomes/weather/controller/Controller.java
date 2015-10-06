@@ -12,6 +12,7 @@ import com.nisum.ahomes.weather.services.Greeting;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 
 @RestController
 public class Controller {
@@ -66,6 +67,13 @@ public class Controller {
     public String list(){
     	if (GetXmlObject.weather == null) this.InitXmlRequest();
     	return GetXmlObject.weather.getWeather();
+    }
+
+    @RequestMapping(value = "/delete", method = DELETE, produces = "application/json")
+    @ResponseBody
+    public String delete(@RequestParam(value="date")  String date, @RequestParam(value="hour") String hour){
+    	if (GetXmlObject.weather == null) this.InitXmlRequest();
+    	return GetXmlObject.weather.deleteWeather(date,hour);
     }
 
 }
