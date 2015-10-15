@@ -1,6 +1,7 @@
 package com.nisum.ahomes.weather;
 
 import static com.jayway.restassured.module.mockmvc.RestAssuredMockMvc.given;
+
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
@@ -8,7 +9,7 @@ import static org.hamcrest.Matchers.startsWith;
 
 import java.util.Calendar;
 
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,7 +23,7 @@ public class ControllerTest_655 {
 		RestAssuredMockMvc.standaloneSetup(new Controller());
 	}
 
-    @AfterClass
+    @After
     public static void resetRestAssured() {
         RestAssuredMockMvc.reset();
     }
@@ -113,7 +114,7 @@ public class ControllerTest_655 {
 	 * Given: the param date and hour.
 	 * When: I pass the request to the REST Service by DELETE method.
 	 * Then: I delete the data with the corresponding id
-	 * And: I get a XML/JSON message of SUCCESS.
+	 * And: I get a XML/JSON message of DELETED.
 	 */
 	@Test
 	public void delete_data_by_date_and_hour(){
